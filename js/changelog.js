@@ -38,7 +38,7 @@ async function openInfoPage(page) {
             if (!response.ok) throw new Error('A changelog source could not be loaded');
             let markdown = await response.text();
             markdown = markdown.replace(
-                /\\[([^\\]]+)\\]\\((https:\\/\\/www\\.minecraft\\.net\\/content\\/[^)]+\\.jpg)\\)\\s*\\n\\s*\\n\\*\\*(.*?)\\*\\*\\s*\\[Click here for a link to the full-size image\\.\\]\\(([^)]+)\\)/gs,
+                /\[([^\]]+)\]\((https:\/\/www\.minecraft\.net\/content\/[^)]+\.jpg)\)\s*\n\s*\n\*\*(.*?)\*\*\s*\[Click here for a link to the full-size image\.\]\(([^)]+)\)/gs,
                 (match, alt, imageUrl, caption, originalUrl) =>
                     '<figure class="changelog-figure"><a href="' + imageUrl + '" target="_blank" rel="noopener"><img src="' + imageUrl + '" alt="' + alt.replace(/"/g, '&quot;') + '" loading="lazy"></a><figcaption>' + caption + ' <a href="' + originalUrl + '" target="_blank" rel="noopener">Open full-size image</a></figcaption></figure>'
             );
