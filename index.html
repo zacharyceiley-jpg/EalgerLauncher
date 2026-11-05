@@ -90,12 +90,12 @@
             </div>
             <div id="javatabs">
                 <ul class="gameTabs">
-                    <li id="header1" class="headerButtonSelected">Play</li>
+                    <li id="header1" class="headerButtonSelected" onclick="closeInfoPage()">Play</li>
                     <li id="header2" class="headerButtons" onclick="errorNA()">DLC</li>
-                    <li id="header3" class="headerButtons" onclick="errorNA()">FAQ</li>
+                    <li id="header3" class="headerButtons" onclick="openFAQ()">FAQ</li>
                     <li id="header4" class="headerButtons" onclick="errorNA()">Installations</li>
                     <li id="header5" class="headerButtons" onclick="errorNA()">Skins</li>
-                    <li id="header6" class="headerButtons" onclick="errorNA()">Patch Notes</li>
+                    <li id="header6" class="headerButtons" onclick="openChangelog()">Changelog</li>
                 </ul>
             </div>
         </div>
@@ -243,8 +243,13 @@
                 <p class="usernameText">Generic User</p>
             </div>
         </div>
+        <section id="infoPanel" class="infoPanel" aria-live="polite" style="display: none;">
+            <div id="infoContent" class="infoContent"></div>
+        </section>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/changelog.js"></script>
 </body>
 
 </html>
