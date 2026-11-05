@@ -203,7 +203,7 @@ function dropdowntoggle(){
 
 }
 
-function resetSelected() {\n    if (typeof closeInfoPage === 'function') closeInfoPage();
+function resetSelected() {
     document.getElementById('gtabs1').style.fontWeight = '';
     document.getElementById('gtabs1').style.borderLeft = '';
     document.getElementById('gtabs2').style.fontWeight = '';
